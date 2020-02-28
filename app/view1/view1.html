@@ -1,0 +1,14 @@
+<h2>APP Store</h2>
+<div class="row">
+
+  <div class="col-md-3" ng-repeat="x in modulos">
+    <div class="card">
+      <h4>{{ x.mod_categoria }}</h4>
+      <a href="#"><i class="fa {{ x.mod_img }}"></i></a>
+      <h4>{{ x.mod_nome }}</h4>
+      <p class="price"> + R${{ x.mod_valor }} por colaborador por mês</p>
+      <button>Contratar</button>
+    </div>
+  </div>
+
+</div>

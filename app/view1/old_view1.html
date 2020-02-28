@@ -1,0 +1,32 @@
+<p>This is the partial for view 1.</p>
+
+<table>
+  <thead>
+  	<tr>
+      <th>Id</th>
+      <th>Categoria</th>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Sobre</th>
+      <th>Img</th>
+      <th>Criado_em</th>
+      <th>Criado_por</th>
+      <th>Atualizado_em</th>
+      <th>Atualizado_por</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="x in names">
+      <td>{{ x.mod_id }}</td>
+      <td>{{ x.mod_categoria }}</td>
+      <td>{{ x.mod_nome }}</td>
+      <td>{{ x.mod_valor }}</td>
+      <td>{{ x.mod_sobre }}</td>
+      <td><img src="./assets/img{{ x.mod_img }}"></td>
+      <td>{{ x.mod_created_at }}</td>
+      <td>{{ x.mod_created_by }}</td>
+      <td>{{ x.mod_updated_at }}</td>
+      <td>{{ x.mod_updated_by }}</td>
+    </tr>
+  </tbody>
+</table>
