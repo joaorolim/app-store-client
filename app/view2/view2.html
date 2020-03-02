@@ -1,5 +1,35 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<h2>APP Store</h2>
+<!-- <div class="row" ng-controller="View2Ctrl"> -->
+<div class="row" style="margin-top:30px;">
+
+  <div class="col-md-3">
+    <div class="" style="text-align:center">
+      <!-- <h4 style="background-color:blue;text-align:center;color:white">{{ modToView.mod_categoria }}</h4> -->
+      <h4 class="grade" style="background-color:{{ modToView.mod_cor }};">{{ modToView.mod_categoria }}</h4>
+      <div class="img">
+        <!-- <a href="#"><i class="fa {{ modToView.mod_img }} fa-5x"></i></a> -->
+        <a href="#" class="img"><i class="fa {{ modToView.mod_img }}"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="">
+      <h4>{{ modToView.mod_nome }}</h4>
+      <p class="price"> + R${{ modToView.mod_valor }} por colaborador por mês</p>
+      <!-- <button>{{ modToView.btn_desc }}</button> -->
+      <a href="#" class="mybtn" role="button" ng-click="cadastrar($event, this)">{{ modToView.btn_desc }}</a>
+    </div>
+  </div>
+
+  <div class="col-md-12" style="margin-top:60px;">
+    <div>
+      <h4><b>Sobre o módulo</b></h4>
+      <!-- <p data-ng-model="$ctrl.modToView"> -->
+      <div style="white-space:normal">
+        {{ modToView.mod_sobre }}
+      </div>
+    </div>
+  </div>
+
+</div>

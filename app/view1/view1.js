@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.view1', ['ngRoute', 'ngResource'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,11 +9,12 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
-	// $http.get("https://jsonplaceholder.typicode.com/posts")
-	$http.get("http://localhost:8080/api/modulos")
-    .then(function (response) {
-      $scope.modulos = response.data;
-      console.log(response.data);
-    });
+.controller('View1Ctrl', ['$scope', '$http', 'Fac', function($scope, $http, Fac) {
+  // console.log('View1Ctrl');
+
+  let modulosToView = Fac.getModulosToView();
+  $scope.mdsToView = modulosToView;
+
+  //console.log($scope.mdsToView);
+
 }]);

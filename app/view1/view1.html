@@ -1,13 +1,17 @@
 <h2>APP Store</h2>
 <div class="row">
 
-  <div class="col-md-3" ng-repeat="x in modulos">
-    <div class="card">
-      <h4>{{ x.mod_categoria }}</h4>
-      <a href="#"><i class="fa {{ x.mod_img }}"></i></a>
-      <h4>{{ x.mod_nome }}</h4>
-      <p class="price"> + R${{ x.mod_valor }} por colaborador por mês</p>
-      <button>Contratar</button>
+  <!-- <div class="col-md-3" ng-repeat="m in mdsToView" style="border: 1px solid blue; padding: 0; margin: 0"> -->
+  <div class="mycol-container">
+    <div class="card mycol" ng-repeat="m in mdsToView">
+      <h4 class="grade" style="background-color:{{ m.mod_cor }};">{{ m.mod_categoria }}</h4>
+      <div class="img">
+        <a href="/view2/{{ m.mod_id }}" class="img"><i class="fa {{ m.mod_img }}"></i></a>
+      </div>
+      <h4 class="name">{{ m.mod_nome }}</h4>
+      <p class="price"> + R${{ m.mod_valor }} por colaborador por mês</p>
+      <!-- <button>{{ m.btn_desc }}</button> -->
+      <a href="/view2/{{ m.mod_id }}" class="mybtn" role="button">{{ m.btn_desc }}</a>
     </div>
   </div>
 
